@@ -69,3 +69,5 @@ Alldata <- rbind(TrainDataSubActivity2, TestDataSubActivity2)
  
    save(Outtbl, file = "Outtbl.Rdata")
    
+ write.table(Outtbl ,file= "fitSummary.txt", row.name=FALSE )
+
