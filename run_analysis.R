@@ -67,4 +67,5 @@ Alldata <- rbind(TrainDataSubActivity2, TestDataSubActivity2)
 
   Outtbl <- aggregate(. ~ SubjectID+ Activity, data = Alldata, FUN = mean)
  
+   save(Outtbl, file = "Outtbl.Rdata")
    
