@@ -20,8 +20,10 @@ TestIdent <- read.table("./UCI HAR Dataset/test/y_test.txt")
 TestDataDesc <- TestData %>% setNames(VarNames$V2)
 
 # pick only variables that have mean and std values;
+
 TestDataDesc2 <- TestDataDesc %>%  select(contains("mean") |contains("std")  )
 
+ 
 # combine data with corresponding subject and Activity Identifiers
 
 SubIdent <- SubIdent %>% setNames("SubjectID")
@@ -34,14 +36,7 @@ TestDataSubActivity <- cbind(SubIdent,TestIdent, TestDataDesc2 )
 
 TestDataSubActivity2 <- TestDataSubActivity %>% left_join(ActLbl,by= c("ActivityNum"))
 TestDataSubActivity2 <-as_tibble(TestDataSubActivity2)
-# vname <-variable.names(TestDataDesc2)
-#  TestGrp <-TestDataSubActivity2 %>%  arrange(SubjectID, Activity) %>%
-#   group_by(SubjectID, Activity) %>% 
-#   group_map(colMeans())
-#  
-#  TestGrp <-TestDataSubActivity2 %>%  arrange(SubjectID, Activity) %>%
-#    group_by(SubjectID, Activity) %>% 
-#    group_map(mean)
+ 
 
 #READ IN TRAINING DATA
 
@@ -72,4 +67,4 @@ Alldata <- rbind(TrainDataSubActivity2, TestDataSubActivity2)
 
   Outtbl <- aggregate(. ~ SubjectID+ Activity, data = Alldata, FUN = mean)
  
- 
+   

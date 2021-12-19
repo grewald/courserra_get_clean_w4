@@ -1,6 +1,4 @@
-#Read Me
-
-
+ 
 Details about the input dataset could be obtained from text files located
 here ./UCI HAR Dataset folder
 

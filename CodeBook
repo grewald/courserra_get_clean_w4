@@ -1,0 +1,16 @@
+
+data from test and train area was used
+./UCI HAR Dataset/test
+./UCI HAR Dataset/train
+
+same steps were applied in both test and train data 
+
+1) read in test data
+2) read in subject identification and activity id data
+3) merge data from step1 and step 2
+
+Repeat the above steps on training data
+
+4) combine training and test data
+5) keep variables related to mean and std
+6) summarize the data by creating mean values on the data by subject and activity.
